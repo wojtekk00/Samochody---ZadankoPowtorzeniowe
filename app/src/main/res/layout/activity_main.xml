@@ -111,4 +111,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dodaj" />
+
+    <ListView
+        android:id="@+id/listViewSamochody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

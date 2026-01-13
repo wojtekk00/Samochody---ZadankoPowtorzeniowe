@@ -7,6 +7,17 @@ public class Samochod {
     private boolean czyPierwszyWlasciciel;
     private String historia;
 
+    @Override
+    public String toString() {
+        return "Samochod{" +
+                "marka='" + marka + '\'' +
+                ", model='" + model + '\'' +
+                ", rocznik=" + rocznik +
+                ", czyPierwszyWlasciciel=" + czyPierwszyWlasciciel +
+                ", historia='" + historia + '\'' +
+                '}';
+    }
+
     public Samochod(String marka, String model, int rocznik, boolean czyPierwszyWlasciciel, String historia) {
         this.marka = marka;
         this.model = model;

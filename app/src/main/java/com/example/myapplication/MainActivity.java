@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -18,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private Spinner spinnerMarka;
@@ -33,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     private int rocznik;
     private boolean czyPierwszyWlasciciel;
     private String historia;
+
+    private ListView listViewSamochody;
+    private ArrayList arrayListSamochody;
+    private ArrayAdapter arrayAdapterSamochody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,10 +113,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        arrayListSamochody = new ArrayList<>();
+        arrayAdapterSamochody = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, arrayListSamochody);
+        listViewSamochody = findViewById(R.id.listViewSamochody);
+        listViewSamochody.setAdapter(arrayAdapterSamochody);
+
         buttonDodaj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                marka = spinnerMarka.getSelectedItem().toString();
+                model = spinnerModel.getSelectedItem().toString();
+                rocznik = seekBarRocznik.getProgress();
+                czyPierwszyWlasciciel = checkBoxWlasciciel.isChecked();
+                if(radioGroupHistoria.getCheckedRadioButtonId() == R.id.radioButtonBezwypadkowe){
+                    historia = "Bezwypadkowe";
+                }
+                else if(radioGroupHistoria.getCheckedRadioButtonId() == R.id.radioButtonNaprawione){
+                    historia = "Powypadkowe naprawione";
+                }
+                else if(radioGroupHistoria.getCheckedRadioButtonId() == R.id.radioButtonDoKasacji){
+                    historia = "Do kasacji";
+                }
 
+                Samochod samochod = new Samochod(marka, model, rocznik, czyPierwszyWlasciciel, historia);
+
+                arrayListSamochody.add(samochod);
+                arrayAdapterSamochody.notifyDataSetChanged();
             }
         });
     }
