@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Samochody" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marka" />
+
+        <Spinner
+            android:id="@+id/spinnerMarka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model" />
+
+        <Spinner
+            android:id="@+id/spinnerModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rocznik: " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBarRocznik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="2000"
+        android:max="2026" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWlasciciel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Czy pierwszy właściciel" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Historia" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupHistoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonBezwypadkowe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bezwypadkowe" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNaprawione"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Powypadkowe naprawione" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDoKasacji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do kasacji" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonDodaj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj" />
+</LinearLayout>

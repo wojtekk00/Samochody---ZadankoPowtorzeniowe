@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string-array name="marki">
+        <item>Volkswagen</item>
+        <item>Audi</item>
+        <item>Skoda</item>
+    </string-array>
+    <string-array name="modeleVolkswagen">
+        <item>Passat</item>
+        <item>Bora</item>
+        <item>Golf</item>
+    </string-array>
+    <string-array name="modeleAudi">
+        <item>A4</item>
+        <item>A3</item>
+        <item>A6</item>
+    </string-array>
+    <string-array name="modeleSkoda">
+        <item>Octavia</item>
+        <item>Fabia</item>
+        <item>Superb</item>
+    </string-array>
+</resources>
