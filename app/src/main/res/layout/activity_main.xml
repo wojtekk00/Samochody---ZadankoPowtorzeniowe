@@ -57,9 +57,10 @@
             android:text="Rocznik: " />
 
         <TextView
+            android:id="@+id/textViewRocznik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0000" />
+            android:text="2000" />
     </LinearLayout>
 
     <SeekBar

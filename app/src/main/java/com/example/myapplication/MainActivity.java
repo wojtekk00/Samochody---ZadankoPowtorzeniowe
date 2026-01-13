@@ -6,9 +6,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox checkBoxWlasciciel;
     private RadioGroup radioGroupHistoria;
     private Button buttonDodaj;
+    private TextView textViewRocznik;
+
+    private String marka;
+    private String model;
+    private int rocznik;
+    private boolean czyPierwszyWlasciciel;
+    private String historia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         checkBoxWlasciciel = findViewById(R.id.checkBoxWlasciciel);
         radioGroupHistoria = findViewById(R.id.radioGroupHistoria);
         buttonDodaj = findViewById(R.id.buttonDodaj);
+        textViewRocznik = findViewById(R.id.textViewRocznik);
 
         ArrayAdapter<CharSequence> arrayAdapterMarka = ArrayAdapter.createFromResource(this, R.array.marki, android.R.layout.simple_spinner_item);
         spinnerMarka.setAdapter(arrayAdapterMarka);
@@ -75,6 +85,30 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        seekBarRocznik.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textViewRocznik.setText("" + i);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        buttonDodaj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
             }
         });
